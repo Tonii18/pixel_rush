@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://criw5wfnklgcd"]
+
+[ext_resource type="Texture2D" uid="uid://cgtqgoqvbl4cc" path="res://oak_woods_v1.0/ground.png" id="1_cmdjc"]
+
+[sub_resource type="GDScript" id="GDScript_gb0pw"]
+script/source = "extends Node2D
+
+@export var base_speed: float = 200  # Velocidad base del desplazamiento
+
+func _process(delta):
+	for layer in get_children():  # Recorremos todas las capas
+		if layer is ParallaxLayer:
+			layer.motion_offset.x -= base_speed * layer.motion_scale.x * delta
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb5vp"]
+size = Vector2(2304, 90.25)
+
+[node name="Ground" type="StaticBody2D"]
+script = SubResource("GDScript_gb0pw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 624)
+texture = ExtResource("1_cmdjc")
+centered = false
+region_rect = Rect2(80, 56, 96, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1152, 674.875)
+shape = SubResource("RectangleShape2D_jb5vp")

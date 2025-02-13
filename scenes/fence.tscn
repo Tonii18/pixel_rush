@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj0ahu10ggs06"]
+
+[ext_resource type="Texture2D" uid="uid://dt72g824eo0fa" path="res://oak_woods_v1.0/decorations/fence_1.png" id="1_m2us0"]
+
+[node name="Fence" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_m2us0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-36.5, 9.5, -36.5, -9.5, 36.5, -9.5, 36.5, 9.5)

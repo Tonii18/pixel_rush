@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca4oqhqbd8r86"]
+
+[ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_1xsgh"]
+[ext_resource type="Texture2D" uid="uid://csrfsk0plgihd" path="res://oak_woods_v1.0/background/background_layer_1.png" id="2_v26e7"]
+[ext_resource type="Texture2D" uid="uid://hebx5j41tbmp" path="res://oak_woods_v1.0/background/background_layer_2.png" id="3_7r2v5"]
+[ext_resource type="Texture2D" uid="uid://cj7cwiboimlk6" path="res://oak_woods_v1.0/background/background_layer_3.png" id="4_32bne"]
+[ext_resource type="PackedScene" uid="uid://criw5wfnklgcd" path="res://scenes/ground.tscn" id="5_g4nti"]
+
+[node name="World" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_1xsgh")
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(640.5, 359.5)
+scale = Vector2(3.997, 3.997)
+texture = ExtResource("2_v26e7")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640.5, 359.5)
+scale = Vector2(3.997, 3.997)
+texture = ExtResource("3_7r2v5")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(640.5, 359.5)
+scale = Vector2(3.997, 3.997)
+texture = ExtResource("4_32bne")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Ground" parent="ParallaxBackground/ParallaxLayer4" instance=ExtResource("5_g4nti")]

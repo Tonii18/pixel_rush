@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tf6hhgvnmjsx"
+path="res://.godot/imported/undertale_megalovania (online-audio-converter.com).mp3-9f0dc3affb4b1d7ff726e19c0f8e2b99.mp3str"
+
+[deps]
+
+source_file="res://sounds/downloaded_music/undertale_megalovania (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/undertale_megalovania (online-audio-converter.com).mp3-9f0dc3affb4b1d7ff726e19c0f8e2b99.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
