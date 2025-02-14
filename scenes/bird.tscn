@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpuajlb5cf8kx"]
+[gd_scene load_steps=15 format=3 uid="uid://cpuajlb5cf8kx"]
 
+[ext_resource type="Script" path="res://scripts/bird.gd" id="1_jgo3a"]
 [ext_resource type="Texture2D" uid="uid://lmf5t8qe6ak1" path="res://oak_woods_v1.0/Bird.png" id="1_pfond"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_koaun"]
@@ -74,24 +75,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2k0x"]
-size = Vector2(11, 13)
+size = Vector2(20, 24)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yv818"]
-radius = 8.0
-height = 22.0
+radius = 17.0
+height = 40.0
 
 [node name="Bird" type="Area2D"]
+script = ExtResource("1_jgo3a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_p58pj")
 animation = &"flying"
-frame_progress = 0.285208
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9.5, 0.5)
+position = Vector2(-18, 0)
 shape = SubResource("RectangleShape2D_g2k0x")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(9, 0)
 shape = SubResource("CapsuleShape2D_yv818")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
