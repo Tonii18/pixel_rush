@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce70sq7o4tdlg"]
+
+[ext_resource type="Texture2D" uid="uid://cv4g1voobwl5w" path="res://oak_woods_v1.0/decorations/lamp.png" id="1_qa0da"]
+
+[node name="Lamp" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qa0da")

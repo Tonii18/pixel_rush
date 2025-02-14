@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyp3laljvguv4"]
+[gd_scene load_steps=7 format=3 uid="uid://cyp3laljvguv4"]
 
 [ext_resource type="PackedScene" uid="uid://ca4oqhqbd8r86" path="res://scenes/world.tscn" id="1_e540s"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_h83ft"]
 [ext_resource type="PackedScene" uid="uid://ccw56qdx4hq3n" path="res://scenes/scorer.tscn" id="1_hengu"]
 [ext_resource type="PackedScene" uid="uid://criw5wfnklgcd" path="res://scenes/ground.tscn" id="2_tr4db"]
 [ext_resource type="PackedScene" uid="uid://boci2k1pw356" path="res://scenes/player.tscn" id="3_652e8"]
+[ext_resource type="AudioStream" uid="uid://dxdu12532hng4" path="res://sounds/downloaded_music/8bit-Battle01.mp3" id="5_lx5fn"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_h83ft")
 
 [node name="Scorer" parent="." instance=ExtResource("1_hengu")]
 
@@ -16,3 +19,8 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_652e8")]
 position = Vector2(176, 558)
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lx5fn")
+volume_db = -15.991
+parameters/looping = true
